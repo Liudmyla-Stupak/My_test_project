@@ -11,7 +11,7 @@ class ProductPage(BasePage):
         price = price_book.text
         button = self.browser.find_element(By.CSS_SELECTOR, ".btn.btn-lg.btn-primary.btn-add-to-basket")
         button.click()
-        #self.solve_quiz_and_get_code()
+        self.solve_quiz_and_get_code()
         #time.sleep(1500)
         message1 = self.browser.find_element(By.CSS_SELECTOR, ".alertinner strong")
         mes1 = message1.text

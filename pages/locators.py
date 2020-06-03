@@ -7,6 +7,10 @@ class MainPageLocators():
 class LoginPageLocators():
     Login_form = (By.CSS_SELECTOR, "#login_form")
     Register_form = (By.CSS_SELECTOR, "#register_form")
+    input1 = (By.CSS_SELECTOR, '[name="registration-email"]')
+    input2 = (By.CSS_SELECTOR, '[name="registration-password1"]')
+    input3 = (By.CSS_SELECTOR, '[name="registration-password2"]')
+    button = (By.CSS_SELECTOR, '[name="registration_submit"]')
 
 class ProductPageLocators():
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alertinner")

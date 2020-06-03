@@ -22,12 +22,10 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.Register_form), "NO REGISTER FORM"
 
     def register_new_user(email, password):
-        input1 = (By.CSS_SELECTOR, '[name="registration-email"]')
-        input1.send.keys(email)
-        input2 = (By.CSS_SELECTOR, '[name="registration-password1"]')
-        input2.send.keys(password)
-        input3 = (By.CSS_SELECTOR, '[name="registration-password2"]')
-        input3.send.keys(password)
-        button = (By.CSS_SELECTOR, '[name="registration_submit"]')
-        button.clic()
+        email = str(time.time()) + "@fakemail.org"
+        password = str(time.time())
+        input1.send_keys(email)
+        input2.send_keys(password)
+        input3.send_keys(password)
+        button.click()
      
