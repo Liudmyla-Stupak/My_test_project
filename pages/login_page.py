@@ -21,11 +21,16 @@ class LoginPage(BasePage):
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.Register_form), "NO REGISTER FORM"
 
-    def register_new_user(email, password):
-        email = str(time.time()) + "@fakemail.org"
-        password = str(time.time())
+    def register_new_user(self, email, password):
+        #our_email = str(time.time()) + "@fakemail.org"
+        #our_password = str(time.time())
+        input1 = self.browser.find_element(By.CSS_SELECTOR, '[name="registration-email"]')
+        button = self.browser.find_element(By.CSS_SELECTOR, '[name="registration_submit"]')
         input1.send_keys(email)
+        input2 = self.browser.find_element(By.CSS_SELECTOR, '[name="registration-password1"]')
         input2.send_keys(password)
+        input3 = self.browser.find_element(By.CSS_SELECTOR, '[name="registration-password2"]')
         input3.send_keys(password)
+        button = self.browser.find_element(By.CSS_SELECTOR, '[name="registration_submit"]')
         button.click()
      
